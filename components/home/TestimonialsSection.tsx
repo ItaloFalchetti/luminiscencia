@@ -59,8 +59,8 @@ export default function TestimonialsSection() {
             <div className="w-8 h-px bg-(--color-primary)" style={{ opacity: 0.5 }} />
           </div>
           <h2
-            className="font-normal text-white leading-tight"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+            className="font-normal leading-tight"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", color: "#FFFFE6" }}
           >
             Lo que dicen quienes{" "}
             <em style={{ fontStyle: "italic", color: "var(--color-primary)" }}>

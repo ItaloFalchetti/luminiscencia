@@ -96,7 +96,7 @@ export default function ConveniosSection() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-normal text-white leading-snug">
+                <h3 className="text-xl font-normal leading-snug" style={{ color: "#FFFFE6" }}>
                   Cuidado colectivo con impacto real
                 </h3>
                 <p className="text-(--color-text-on-dark) text-sm leading-relaxed opacity-80">

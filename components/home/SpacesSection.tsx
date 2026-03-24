@@ -12,7 +12,14 @@ export default function SpacesSection() {
               <span className="text-(--color-primary) text-xs font-medium tracking-[0.2em] uppercase">
                 Nuestro espacio
               </span>
-              <h2 className="text-4xl md:text-5xl font-normal text-white">
+              <h2
+                className="font-normal leading-none tracking-tight"
+                style={{
+                  fontFamily: "var(--font-heading), Georgia, serif",
+                  fontSize: "clamp(2.8rem, 4.5vw, 3.8rem)",
+                  color: "#FFFFE6",
+                }}
+              >
                 Un lugar pensado<br className="hidden md:block" /> para ti
               </h2>
             </div>

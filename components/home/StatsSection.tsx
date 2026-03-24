@@ -46,8 +46,8 @@ export default function StatsSection() {
               </span>
             </div>
             <h2
-              className="font-normal text-white leading-none tracking-tight"
-              style={{ fontSize: "clamp(2.8rem, 4.5vw, 3.8rem)" }}
+              className="font-normal leading-none tracking-tight"
+              style={{ fontSize: "clamp(2.8rem, 4.5vw, 3.8rem)", color: "#FFFFE6" }}
             >
               Transparencia{" "}
               <em style={{ fontStyle: "italic", color: "var(--color-primary)" }}>

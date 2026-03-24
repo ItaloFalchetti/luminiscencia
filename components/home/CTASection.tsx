@@ -36,8 +36,8 @@ export default function CTASection() {
             className="font-normal text-white leading-[0.9] tracking-tight"
             style={{ fontSize: "clamp(2.8rem, 5.5vw, 4.5rem)" }}
           >
-            Da el primer<br />
-            paso hacia<br />
+            <span style={{ color: "#FFFFE6" }}>Da el primer<br />
+            paso hacia</span><br />
             <em
               style={{
                 fontStyle: "italic",
