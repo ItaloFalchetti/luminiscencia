@@ -8,18 +8,19 @@
 
 /* Colores: @theme — crea las CSS custom properties EN :root Y las utility classes */
 @theme {
-  --color-bg:              #FAFAF7;
-  --color-surface:         #F2F0E8;
+  --color-bg:              #F6F3EC;
+  --color-surface:         #EDEADF;
   --color-dark:            #1A1A18;
-  --color-primary:         #C8A020;
-  --color-primary-light:   #E8D87A;
-  --color-primary-dark:    #7A6518;
-  --color-glow:            #F0E878;
+  --color-primary:         #B89650;
+  --color-primary-light:   #D4B87A;
+  --color-primary-dark:    #7A6230;
+  --color-glow:            #EFE070;
   --color-text:            #2C2820;
   --color-heading:         #1A1A18;
   --color-muted:           #7A7260;
-  --color-border:          #E0D8C0;
-  --color-text-on-dark:    #C8A828;
+  --color-border:          #DDD5BE;
+  --color-text-on-dark:    #D4C090;
+  --color-accent:          #8FAF96;
 }
 
 body {
@@ -30,18 +31,47 @@ body {
   line-height: 1.6;
 }
 
+/* Escala el texto un 15% en escritorio — afecta todas las unidades rem */
+@media (min-width: 1024px) {
+  html {
+    font-size: 18.4px;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), Georgia, serif;
   color: var(--color-heading);
   line-height: 1.2;
 }
 
+/* ── Entrance animations ──────────────────────────────────── */
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-up   { animation: slide-up   0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in    { animation: fade-in    1.1s ease both; }
+.animate-slide-right{ animation: slide-right 1s  cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Marquee ──────────────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* WhatsApp floating button */
+/* ── WhatsApp floating button ─────────────────────────────── */
 @keyframes wa-float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-7px); }
@@ -65,4 +95,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .wa-pulse-ring {
   animation: wa-pulse-ring 2s ease-out infinite;
+}
+
+/* ── Service row hover description reveal ─────────────────── */
+.service-row-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease;
+}
+
+.service-row:hover .service-row-desc {
+  max-height: 80px;
+  opacity: 1;
 }

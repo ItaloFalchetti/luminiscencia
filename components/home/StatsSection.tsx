@@ -16,45 +16,64 @@ const stats = [
     label: "Psicólogas certificadas",
     detail: "Con formación especializada",
   },
-  {
-    value: "$18K",
-    label: "Precio con convenio",
-    detail: "Convenio Municipalidad de Pudahuel",
-  },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="py-24 bg-(--color-dark)">
-      <Container>
-        <div className="flex flex-col gap-12">
+    <section className="py-28 bg-(--color-dark) relative overflow-hidden">
 
-          <div className="flex flex-col gap-3">
-            <span className="text-(--color-primary) text-xs font-medium tracking-[0.2em] uppercase">
-              El centro en números
-            </span>
-            <h2 className="text-4xl md:text-5xl font-normal text-white">
-              Transparencia y compromiso
+      {/* Decorative circles */}
+      <div
+        className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ border: "1px solid rgba(184,150,80,0.08)" }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute -right-16 -top-16 w-[320px] h-[320px] rounded-full pointer-events-none"
+        style={{ border: "1px solid rgba(184,150,80,0.06)" }}
+        aria-hidden="true"
+      />
+
+      <Container>
+        <div className="flex flex-col gap-14">
+
+          {/* Header */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-px bg-(--color-primary)" />
+              <span className="text-[10px] text-(--color-primary) tracking-[0.45em] uppercase font-medium">
+                El centro en números
+              </span>
+            </div>
+            <h2
+              className="font-normal text-white leading-none tracking-tight"
+              style={{ fontSize: "clamp(2.8rem, 4.5vw, 3.8rem)" }}
+            >
+              Transparencia{" "}
+              <em style={{ fontStyle: "italic", color: "var(--color-primary)" }}>
+                y compromiso
+              </em>
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Stats grid — 3 items */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
             {stats.map((stat) => (
               <div
                 key={stat.value}
-                className="flex flex-col items-center text-center gap-4 p-8 rounded-2xl bg-white/5 hover:bg-white/8 transition-colors duration-300"
+                className="flex flex-col gap-5 p-8 lg:p-10 bg-(--color-dark) hover:bg-white/[0.03] transition-colors duration-300"
               >
                 <span
                   className="font-normal leading-none"
                   style={{
                     fontFamily: "var(--font-heading), Georgia, serif",
                     fontSize: "clamp(3rem, 5vw, 4.5rem)",
-                    color: "#F0E0A0",
+                    color: "var(--color-text-on-dark)",
                   }}
                 >
                   {stat.value}
                 </span>
-                <div className="flex flex-col items-center gap-1 pt-3 border-t border-white/10 w-full">
+                <div className="flex flex-col gap-1 pt-5 border-t border-white/10">
                   <span className="text-sm text-white font-medium leading-snug">
                     {stat.label}
                   </span>

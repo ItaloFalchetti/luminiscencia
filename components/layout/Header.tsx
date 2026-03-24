@@ -29,50 +29,54 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-(--color-bg)/95 backdrop-blur-sm border-b border-(--color-border) shadow-sm"
+          ? "bg-(--color-bg)/96 backdrop-blur-md border-b border-(--color-border) shadow-[0_1px_12px_rgba(26,26,24,0.07)]"
           : "bg-(--color-bg)/95"
       }`}
     >
       <Container>
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
-          <Link href="/" aria-label="Inicio">
+          <Link href="/" aria-label="Inicio" className="shrink-0">
             <Image
               src="/logo.png"
               alt="Centro Terapéutico Luminiscencia"
-              width={60}
-              height={60}
+              width={54}
+              height={54}
               priority
               style={{ clipPath: "circle(49% at 50% 50%)" }}
             />
           </Link>
 
-          {/* Navegación desktop */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+          {/* Desktop nav */}
+          <nav
+            className="hidden md:flex items-center gap-8"
+            aria-label="Navegación principal"
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-(--color-text) hover:text-(--color-primary) transition-colors duration-200"
+                className="text-[11px] font-medium text-(--color-muted) hover:text-(--color-dark) tracking-[0.18em] uppercase transition-colors duration-200"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTA desktop */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex">
             <a
               href={TUU_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide hover:bg-(--color-primary-dark) hover:text-white transition-colors duration-200"
+              className="inline-flex items-center justify-center px-6 py-2.5 bg-(--color-primary) text-(--color-dark) text-[10px] font-medium tracking-[0.2em] uppercase hover:bg-(--color-primary-dark) hover:text-white transition-colors duration-200"
             >
               Agendar hora
             </a>
           </div>
 
-          {/* Botón menú móvil */}
+          {/* Mobile menu button */}
           <button
             className="md:hidden p-2 text-(--color-text) hover:text-(--color-primary) transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -80,11 +84,11 @@ export default function Header() {
             aria-expanded={mobileOpen}
           >
             <svg
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               aria-hidden="true"
             >
@@ -95,9 +99,9 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
+                  <line x1="3" y1="7" x2="21" y2="7" />
+                  <line x1="3" y1="13" x2="21" y2="13" />
+                  <line x1="9" y1="19" x2="21" y2="19" />
                 </>
               )}
             </svg>
@@ -105,16 +109,16 @@ export default function Header() {
         </div>
       </Container>
 
-      {/* Menú móvil */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-(--color-bg) border-t border-(--color-border)">
           <Container>
-            <nav className="py-6 flex flex-col gap-5" aria-label="Navegación móvil">
+            <nav className="py-8 flex flex-col gap-6" aria-label="Navegación móvil">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-base font-medium text-(--color-text) hover:text-(--color-primary) transition-colors"
+                  className="text-xs font-medium text-(--color-muted) hover:text-(--color-dark) tracking-[0.2em] uppercase transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -124,7 +128,7 @@ export default function Header() {
                 href={TUU_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide"
+                className="inline-flex items-center justify-center px-6 py-3 bg-(--color-primary) text-(--color-dark) text-[10px] font-medium tracking-[0.2em] uppercase mt-2"
                 onClick={() => setMobileOpen(false)}
               >
                 Agendar hora

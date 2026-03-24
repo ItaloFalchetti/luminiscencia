@@ -33,7 +33,7 @@ export default function SpacesSection() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, rgba(27,45,35,0.75) 0%, rgba(27,45,35,0.15) 55%, transparent 80%)",
+                  "linear-gradient(to right, rgba(26,26,24,0.75) 0%, rgba(26,26,24,0.15) 55%, transparent 80%)",
               }}
             />
             <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
@@ -77,7 +77,7 @@ export default function SpacesSection() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(27,45,35,0.8) 0%, transparent 55%)",
+                      "linear-gradient(to top, rgba(26,26,24,0.8) 0%, transparent 55%)",
                   }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6">

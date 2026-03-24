@@ -23,17 +23,25 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-24 bg-(--color-surface)">
+    <section className="py-28 bg-(--color-surface)">
       <Container>
-        <div className="flex flex-col gap-14">
+        <div className="flex flex-col gap-16">
 
+          {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div className="flex flex-col gap-3">
-              <span className="text-(--color-primary) text-xs font-medium tracking-[0.2em] uppercase">
-                Proceso
-              </span>
-              <h2 className="text-4xl md:text-5xl font-normal">
-                Cómo comenzar
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-px bg-(--color-primary)" />
+                <span className="text-[10px] text-(--color-primary) tracking-[0.45em] uppercase font-medium">
+                  Proceso
+                </span>
+              </div>
+              <h2
+                className="font-normal leading-none tracking-tight text-(--color-dark)"
+                style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)" }}
+              >
+                Cómo{" "}
+                <em style={{ fontStyle: "italic" }}>comenzar</em>
               </h2>
             </div>
             <p className="text-(--color-muted) text-sm leading-relaxed max-w-xs">
@@ -41,30 +49,50 @@ export default function HowItWorksSection() {
             </p>
           </div>
 
+          {/* Steps */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-(--color-border)">
             {steps.map((step, i) => (
               <div
                 key={step.number}
-                className="relative flex flex-col gap-6 p-10 bg-(--color-surface)"
+                className="relative flex flex-col gap-8 p-10 bg-(--color-surface)"
               >
-                {/* Número grande de fondo */}
+                {/* Large faded step number */}
                 <span
-                  className="absolute top-6 right-8 text-[5rem] font-normal leading-none select-none pointer-events-none"
+                  className="absolute top-6 right-7 font-normal leading-none select-none pointer-events-none"
                   style={{
                     fontFamily: "var(--font-heading), Georgia, serif",
+                    fontSize: "6.5rem",
                     color: "var(--color-border)",
                   }}
+                  aria-hidden="true"
                 >
                   {step.number}
                 </span>
 
-                {/* Círculo numerado */}
-                <div className="relative w-10 h-10 rounded-full bg-(--color-primary) flex items-center justify-center shrink-0">
-                  <span className="text-white text-sm font-medium">{i + 1}</span>
+                {/* Step indicator */}
+                <div
+                  className="w-8 h-8 flex items-center justify-center shrink-0"
+                  style={{ border: "1px solid var(--color-primary)" }}
+                >
+                  <span
+                    className="text-xs font-medium text-(--color-primary)"
+                    style={{ fontVariantNumeric: "tabular-nums" }}
+                  >
+                    {i + 1}
+                  </span>
                 </div>
 
-                <div className="flex flex-col gap-3 relative">
-                  <h3 className="text-xl font-normal">{step.title}</h3>
+                {/* Content */}
+                <div className="relative flex flex-col gap-3">
+                  <h3
+                    className="font-normal text-(--color-dark)"
+                    style={{
+                      fontFamily: "var(--font-heading), Georgia, serif",
+                      fontSize: "1.4rem",
+                    }}
+                  >
+                    {step.title}
+                  </h3>
                   <p className="text-sm text-(--color-muted) leading-relaxed">
                     {step.description}
                   </p>
