@@ -66,7 +66,7 @@ export default function Header() {
               href={TUU_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide hover:bg-(--color-primary-dark) hover:text-white transition-colors duration-200"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide hover:bg-(--color-primary-dark) hover:text-white transition-colors duration-200"
             >
               Agendar hora
             </a>
@@ -124,7 +124,7 @@ export default function Header() {
                 href={TUU_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-sm bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-(--color-primary) text-(--color-dark) text-sm font-medium tracking-wide"
                 onClick={() => setMobileOpen(false)}
               >
                 Agendar hora

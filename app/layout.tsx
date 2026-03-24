@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingActions from "@/components/ui/FloatingActions";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -21,6 +22,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Centro Terapéutico Luminiscencia",
   description: "Centro terapéutico en Santiago. Atención psicológica profesional para tu bienestar.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +43,7 @@ export default function RootLayout({
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
+          <FloatingActions />
         </body>
     </html>
   );

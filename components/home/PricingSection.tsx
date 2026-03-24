@@ -34,8 +34,7 @@ export default function PricingSection() {
       <Container>
         <div className="flex flex-col gap-14">
 
-          {/* Encabezado */}
-          <div className="flex flex-col gap-4 max-w-xl">
+          <div className="flex flex-col gap-3 max-w-xl">
             <span className="text-(--color-primary) text-xs font-medium tracking-[0.2em] uppercase">
               Tarifas 2025
             </span>
@@ -49,14 +48,14 @@ export default function PricingSection() {
           </div>
 
           {/* Cards de precios */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl">
             {plans.map((plan) => (
               <div
                 key={plan.type}
-                className={`flex flex-col gap-4 p-8 rounded-sm border ${
+                className={`flex flex-col gap-4 p-8 rounded-2xl ring-1 ${
                   plan.highlight
-                    ? "bg-(--color-dark) border-(--color-primary)"
-                    : "bg-(--color-bg) border-(--color-border)"
+                    ? "bg-(--color-dark) ring-(--color-primary)"
+                    : "bg-(--color-bg) ring-(--color-border)"
                 }`}
               >
                 <span
@@ -75,16 +74,10 @@ export default function PricingSection() {
                   >
                     {plan.price}
                   </span>
-                  <span
-                    className={`text-sm ${
-                      plan.highlight ? "text-(--color-muted)" : "text-(--color-muted)"
-                    }`}
-                  >
-                    {plan.unit}
-                  </span>
+                  <span className="text-sm text-(--color-muted)">{plan.unit}</span>
                 </div>
                 {plan.note && (
-                  <span className="text-(--color-primary) text-xs font-medium border border-(--color-primary)/40 rounded-sm px-2 py-1 w-fit">
+                  <span className="text-(--color-primary) text-xs font-medium border border-(--color-primary)/40 rounded-full px-3 py-1 w-fit">
                     {plan.note}
                   </span>
                 )}
